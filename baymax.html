@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{background-color: #ccc;}
+			#baymax{width:400px;margin:50px auto;position:relative;}
+			#header{
+				width:80px;
+				height:60px;
+				border-radius:50%;
+				background-color: #fff;
+				position:relative;
+				left:25%;
+				top:10px;
+				z-index:66;
+				box-shadow: 2px 2px 4px #666;
+			}
+			#header .eye1{
+				width:10px;
+				height:10px;
+				border-radius:50%;
+				background-color: #222;
+				position:absolute;
+				top:25px;
+				left:20px;
+			}
+			#header .eye2{
+				width:10px;
+				height:10px;
+				border-radius:50%;
+				background-color: #222;
+				position:absolute;
+				top:25px;
+				right:20px;
+			}
+			#header .line{
+				width:30px;
+				height:1px;
+				background-color: #222;
+				position:absolute;
+				left:25px;
+				top:30px;
+			}
+			.main{
+				width: 300px;
+				height:360px;
+				border-radius:50%;
+				background-color: #fff;
+				position:absolute;
+				top:40px;
+				left:-12px;
+				z-index:55;
+				box-shadow: 6px 0px 6px #CCC inset, -6px 0px 6px #ccc inset;
+			}
+			.main .heart{
+				width:40px;
+				height: 40px;
+				border-radius:50%;
+				background-color: #e4e4e4;
+				box-shadow:3px 3px 5px #ccc;
+				position:absolute;
+				top:60px;
+				right:60px;
+			}
+			.main .heart:before{
+				width:20px;
+				height:30px;
+				display: inline-block;
+				background-color: #f00;
+				border-radius:0px 12px 0px 12px;
+			}
+			.hand-r{
+				width:80px;
+				height:240px;
+				background-color: #fff;
+				border-radius:50%;
+				transform: rotate(-24deg);
+               -webkit-transform: rotate(-24deg);
+			   box-shadow:-6px -6px 6px #ccc inset;
+				position: absolute;
+				right:90px;
+				top:60px;
+				z-index:1;
+			}
+			.hr-r{
+				width: 50px;
+				height: 100px;
+				background: #fff;
+				position: absolute;
+				top: 190px;
+				border-radius: 50% 50% 40% 40%;
+				transform: rotate(20deg);
+				-webkit-transform: rotate(40deg);
+				right: 37px;
+			}
+			.hr-r:before {
+				content: "";
+				width: 15px;
+				height: 82px;
+				box-shadow: -4px 0px 6px #ccc inset;
+				transform: rotate(-1deg);
+				position: absolute;
+				right: 0;
+				top: 9px;
+				border-radius: 20% 50% 50% 20%;
+			}
+			.hand-r .fr-1{
+				width:10px;
+				height: 30px;
+				border-radius: 50% 50% 40%;
+				background-color: #fff;
+				position: absolute;
+				top: 273px;
+				right: 84px;
+				transform: rotate(60deg);
+				box-shadow:0px -2px 2px #ccc inset;
+			}
+			.hand-r .fr-2{
+				width:10px;
+				height: 20px;
+				border-radius:50%;
+				background-color: #fff;
+				position: absolute;
+				top: 272px;
+				right: 94px;
+				transform: rotate(60deg);
+				box-shadow:0px -2px 2px #ccc inset;
+			}
+			.hand-r .fr-3{
+				width:14px;
+				height: 30px;
+				border-radius:50%;
+				background-color: #fff;
+				position: absolute;
+				top: 254px;
+				right: 98px;
+				transform: rotate(65deg);
+				box-shadow: 0px -2px 2px #ccc inset;
+			}
+            .hand-l{
+				width:80px;
+				height:240px;
+				background-color: #fff;
+				border-radius:50%;
+				transform: rotate(-24deg);
+               -webkit-transform: rotate(24deg);
+			   box-shadow:-6px -6px 6px #ccc inset;
+				position: absolute;
+				left:-30px;
+				top:60px;
+				z-index:1;
+			}
+			.hr-l{
+				width: 50px;
+				height: 100px;
+				background: #fff;
+				position: absolute;
+				top: 190px;
+				border-radius: 50% 50% 40% 40%;
+				transform: rotate(20deg);
+				-webkit-transform: rotate(-40deg);
+                left: 36px;
+			}
+			.hr-l:before {
+				content: "";
+				width: 15px;
+				height: 82px;
+				box-shadow: -4px 0px 6px #ccc inset;
+				transform: rotate(181deg);
+				position: absolute;
+				left: -2px;
+				top: 9px;
+				border-radius: 20% 50% 50% 20%;
+			}
+			.hand-l .fl-1{
+				width:10px;
+				height: 30px;
+				border-radius: 50% 50% 40%;
+				background-color: #fff;
+				position: absolute;
+				top: 273px;
+				left: 84px;
+				transform: rotate(-60deg);
+				box-shadow:0px -2px 2px #ccc inset;
+			}
+			.hand-l .fl-2{
+				width:10px;
+				height: 20px;
+				border-radius:50%;
+				background-color: #fff;
+				position: absolute;
+				top: 272px;
+				left: 94px;
+				transform: rotate(-60deg);
+				box-shadow:0px -2px 2px #ccc inset;
+			}
+			.hand-l .fl-3{
+				width:14px;
+				height: 30px;
+				border-radius:50%;
+				background-color: #fff;
+				position: absolute;
+				top: 254px;
+				left: 98px;
+				transform: rotate(-65deg);
+				box-shadow: 0px -2px 2px #ccc inset;
+			}
+			.du{
+				width:260px;
+				height:236px;
+				border-radius:42% 42% 50% 50%;
+				background-color: #fff;
+				box-shadow: 0px 3px 2px #888888, 0px -6px 6px #ccc inset;
+				position: absolute;
+				top:123px;
+				left:7%;
+				z-index:15;
+			}
+			.footer .ft-l{
+				width:80px;
+				height:100px;
+				background-color: #fff;
+				border-radius:10% 0% 10% 60%;
+				position: absolute;
+				top:356px;
+				left:36px;
+				box-shadow:0px -3px 6px #888 inset;
+			}
+			.footer .ft-r{
+				width:80px;
+				height:100px;
+				background-color: #fff;
+				border-radius:0% 10% 60% 10%;
+				position: absolute;
+				top:356px;
+				right:166px;
+				box-shadow:0px -3px 6px #888 inset;
+			}
+		</style>
+	</head>
+	<body>
+	  <div id="baymax">	
+		<div id="header">
+			<div class="eye1"></div>
+			<div class="eye2"></div>
+			<div class="line"></div>
+		</div>
+		<div class="hand-l">
+				<div class="hr-l"></div>
+				<div class="fl-1"></div>
+				<div class="fl-2"></div>	
+				<div class="fl-3"></div>		
+		</div>
+		<div class="hand-r">
+		   <div class="hr-r"></div>
+		   <div class="fr-1"></div>
+		   <div class="fr-2"></div>	
+		   <div class="fr-3"></div>		
+		</div>
+
+		<!--身体-->
+		<div class="main">
+			<div class="heart"></div>
+			<div class="du"></div>
+		</div>
+		<!-- 脚 -->
+		<div class="footer">
+			<div class="ft-l"></div>
+			<div class="ft-r"></div>
+		</div>
+	  </div>
+	</body>
+</html>
